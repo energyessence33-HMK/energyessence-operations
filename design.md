@@ -1,131 +1,221 @@
-# Kingdom Executor Studio Mobile App - Design Plan
+# Kingdom Executor Studio - Elite Premium Mobile App Design
 
-## Overview
-A mobile-first interface for managing multi-ecosystem content creation, workflows, and scheduling. Designed for one-handed use with portrait orientation (9:16).
+## Vision
+An elite, premium platform for building authentic brands rooted in Christ consciousness, spiritual alignment, and true source energy. This app guides creators from spiritual identity discovery through professional brand building, content creation, and monetization strategies that win customer emotion and drive premium conversions.
 
-## Screen List
+## Core Philosophy
+- **Christ Consciousness**: All content and brand building rooted in truth, authenticity, and alignment with higher source
+- **Spiritual Identity**: Help users discover their true essence and align with divine purpose
+- **Elite Branding**: Professional frameworks for premium brand positioning
+- **Customer Psychology**: Master emotional connection and conversion psychology
+- **Monetization Mastery**: Learn to "Get Paid 2 Exist" through authentic value creation
 
-1. **Dashboard** - Overview of active ecosystem, recent workflows, and quick stats
-2. **Ecosystems** - Browse and manage multiple ecosystems (EnergyEssence, HitmaKING, THOUGHT2PONDER)
-3. **Blueprint Vault** - Upload PDFs, view extracted guardrails, manage versions
-4. **Workflow** - View active tasks, manage dependencies, enforce active-limit governor
-5. **Ad Generator** - Create ads with templates, manage assets, preview mockups
-6. **Scheduler** - Queue posts, set publish times, enforce hard-law blocks
-7. **Integrations** - Configure webhooks and external connections
+## Screen List (Expanded)
 
-## Primary Content and Functionality
+### 1. Dashboard (Hub)
+- Active ecosystem indicator
+- Quick stats (videos created, posts scheduled, revenue potential)
+- Spiritual alignment check-in (daily affirmation)
+- Quick access to all major features
+- Recent activity and notifications
 
-### Dashboard Screen
-- **Active Ecosystem Indicator**: Large pill showing current ecosystem name
-- **Quick Stats**: Cards showing active workflows, scheduled posts, blueprint versions
-- **Recent Activity**: List of recent actions (last 5 items)
-- **Action Buttons**: Quick access to "New Workflow", "New Post", "View Scheduler"
+### 2. Spiritual Identity Foundation
+- **Identity Discovery Journey**: Guided questionnaire to find your essence in Christ
+- **Core Values Assessment**: Align personal values with brand values
+- **Purpose Statement Generator**: Create authentic brand mission
+- **Spiritual Alignment Tracker**: Daily practices and alignment metrics
+- **Affirmations & Meditations**: Christ-consciousness affirmations for creators
 
-### Ecosystems Screen
-- **Ecosystem List**: Cards for each ecosystem with name, description, status
-- **Add Ecosystem**: Button to create new ecosystem
-- **Ecosystem Details**: Tap to view/edit ecosystem settings
-- **Active Indicator**: Visual indicator showing which ecosystem is active
+### 3. Brand Identity Studio (Premium)
+- **Brand Strategy Questionnaire**: Professional brand positioning framework
+- **Logo & Color Palette Generator**: AI-powered visual identity creation
+- **Brand Voice & Messaging**: Copywriting framework for authentic communication
+- **Competitor Analysis**: Market positioning and differentiation
+- **Brand Guidelines Generator**: Professional brand book creation
+- **Elite Branding Checklist**: Premium brand standards
 
-### Blueprint Vault Screen
-- **Upload Section**: Tap to upload PDF files
-- **Blueprint List**: Cards showing uploaded PDFs with extraction status
-- **Guardrails View**: Expandable section showing extracted rules per blueprint
-- **Conflict Detection**: Alert badge if conflicts detected
-- **Version History**: Timeline of blueprint versions
+### 4. Video Generation Engine (AI-Powered)
+- **1-Minute Video Creator**: Quick promotional/teaser videos
+- **3-Minute Video Creator**: Deep-dive educational/storytelling videos
+- **Scene Library**: Professional scenes, transitions, and effects
+- **Script Generator**: AI-powered professional scripts aligned with brand voice
+- **Voiceover Integration**: Professional narration with multiple voices
+- **Music & Sound Library**: Royalty-free premium audio
+- **Video Preview & Export**: Multiple formats and quality options
+- **Video Analytics**: Performance tracking and optimization
 
-### Workflow Screen
-- **Active Tasks List**: Cards showing active workflows (max 3 enforced)
-- **Task Details**: Task name, dependencies, status, assigned ecosystem
-- **Add Task**: Button to create new workflow task
-- **Task Actions**: Edit, delete, complete, view dependencies
-- **Governor Status**: Visual indicator of active task count vs. limit
+### 5. Content Strategy & Psychology
+- **Customer Psychology Module**: Understanding emotional triggers and buying psychology
+- **Copywriting Mastery**: Headlines, CTAs, and conversion-focused messaging
+- **Storytelling Framework**: Hero's journey and emotional narrative structure
+- **Sales Psychology Principles**: Scarcity, urgency, social proof, authority
+- **Emotional Resonance Scoring**: Analyze content for emotional impact
+- **Conversion Optimization Guide**: A/B testing and improvement strategies
 
-### Ad Generator Screen
-- **Template Selection**: Grid of available ad templates
-- **Asset Library**: Carousel of available assets
-- **Editor View**: Template with editable text fields
-- **Safe Crop Tool**: Image cropping interface
-- **Background Neutralization**: Toggle to neutralize background
-- **Preview**: Mockup of final ad
-- **Save/Export**: Save to library or export
+### 6. Tutorial & Learning Hub
+- **Video Tutorials**: Professional guides on all features
+- **Step-by-Step Guides**: Interactive walkthroughs
+- **Best Practice Templates**: Ready-to-use frameworks
+- **Case Studies**: Real-world brand success stories
+- **Expert Tips & Strategies**: Industry best practices
+- **Certification Path**: Earn badges for mastery
 
-### Scheduler Screen
-- **Scheduled Posts List**: Cards showing queued posts with publish time
-- **Add Post**: Button to create new scheduled post
-- **Hard-Law Blocks**: Visual indicators of blocked publish times
-- **Post Details**: Edit scheduled post, change time, view content
-- **Export**: Button to export schedule as CSV
+### 7. "How to Get Paid 2 Exist" Module
+- **Monetization Models**: Passive income, digital products, services, memberships
+- **Revenue Stream Generator**: Identify best income sources for your brand
+- **Pricing Strategy**: Premium pricing psychology and positioning
+- **Product Creation Workflow**: From idea to launch
+- **Sales Funnel Builder**: Complete customer journey mapping
+- **Affiliate & Partnership Opportunities**: Expand revenue streams
+- **Financial Projections**: Revenue forecasting and goal setting
 
-### Integrations Screen
-- **Connected Services**: List of configured integrations
-- **Webhook Configuration**: Input fields for webhook URLs
-- **Service Selection**: Buttons for Zapier, Make, Buffer, Hootsuite, Notion, Sheets
-- **Connection Status**: Visual indicator of connection health
+### 8. Ad Generator (Enhanced)
+- **Template Library**: 50+ professional ad templates
+- **AI Copy Generator**: Context-aware ad copy
+- **Visual Asset Library**: Premium stock images and graphics
+- **Safe Crop & Optimization**: Professional image handling
+- **Background Neutralization**: Clean, professional backgrounds
+- **Multi-Format Export**: Social media, print, web ready
+- **A/B Testing Setup**: Compare ad variations
 
-## Key User Flows
+### 9. Workflow & Execution
+- **Campaign Planning**: Multi-step campaign orchestration
+- **Task Management**: Active-limit governor (max 3 concurrent)
+- **Dependency Mapping**: Complex workflow visualization
+- **Team Collaboration**: Assign and track tasks
+- **Progress Tracking**: Real-time campaign metrics
+- **Execution Checklist**: Quality assurance before launch
 
-### Create and Schedule a Post
-1. User taps "New Post" on Dashboard
-2. Selects ecosystem from Ecosystems screen
-3. Chooses template from Ad Generator
-4. Edits content and assets
-5. Previews mockup
-6. Saves to library
-7. Navigates to Scheduler
-8. Selects saved post
-9. Sets publish time (checks hard-law blocks)
-10. Confirms and queues
+### 10. Scheduler (Advanced)
+- **Smart Scheduling**: Optimal posting times by platform
+- **Hard-Law Blocks**: Governance rules enforcement
+- **Content Calendar**: Visual planning and management
+- **Multi-Platform Scheduling**: Post to all channels simultaneously
+- **Performance Analytics**: Track post engagement
+- **Reschedule & Optimize**: Learn from performance data
+- **CSV Export**: Complete schedule backup
 
-### Manage Workflows
-1. User navigates to Workflow screen
-2. Views active tasks (max 3)
-3. Taps to view task details
-4. Can edit dependencies or mark complete
-5. New tasks queue if limit reached
-6. Governor prevents exceeding 3 active tasks
+### 11. Integrations & Distribution
+- **Zapier & Make**: Automation workflows
+- **Social Media**: Buffer, Hootsuite, native APIs
+- **Email Marketing**: Mailchimp, ConvertKit, ActiveCampaign
+- **CRM Integration**: HubSpot, Notion, Airtable
+- **Analytics**: Google Analytics, platform-native analytics
+- **Payment Processing**: Stripe, PayPal for product sales
+- **Webhook Configuration**: Custom integrations
 
-### Upload and Extract Guardrails
-1. User navigates to Blueprint Vault
-2. Taps "Upload PDF"
-3. Selects PDF from device
-4. System extracts guardrails automatically
-5. User reviews extracted rules
-6. Conflict detection highlights issues
-7. User can approve or edit guardrails
-8. Version is saved
+### 12. Blueprint Vault (Knowledge Base)
+- **PDF Upload & Parsing**: Extract guardrails and frameworks
+- **Rule Extraction**: Automated governance rule creation
+- **Conflict Detection**: Identify contradictions in rules
+- **Version Control**: Track framework evolution
+- **Template Library**: Save and reuse successful frameworks
+- **Sharing & Collaboration**: Team access to blueprints
 
-## Color Choices
+### 13. Analytics & Performance Dashboard
+- **Campaign Metrics**: Reach, engagement, conversions
+- **Revenue Tracking**: Income from all sources
+- **Audience Insights**: Demographics and behavior
+- **Content Performance**: Top-performing content types
+- **ROI Analysis**: Return on marketing investment
+- **Growth Projections**: Forecast future performance
+- **Custom Reports**: Export and share analytics
 
-**Brand Palette:**
-- **Primary**: #0a7ea4 (Teal - action buttons, highlights)
-- **Background**: #ffffff (Light) / #151718 (Dark)
-- **Surface**: #f5f5f5 (Light) / #1e2022 (Dark)
-- **Foreground**: #11181C (Light) / #ECEDEE (Dark)
-- **Muted**: #687076 (Light) / #9BA1A6 (Dark)
-- **Border**: #E5E7EB (Light) / #334155 (Dark)
-- **Success**: #22C55E (Green - task completion)
-- **Warning**: #F59E0B (Orange - conflicts, blocks)
-- **Error**: #EF4444 (Red - failures)
+### 14. Premium Resources Library
+- **eBooks & Guides**: Downloadable premium content
+- **Templates & Frameworks**: Ready-to-use brand assets
+- **Swipe Files**: Proven copy and designs
+- **Industry Reports**: Market research and trends
+- **Expert Interviews**: Video interviews with successful creators
+- **Resource Marketplace**: Access premium tools and services
+
+## Key User Journeys
+
+### Journey 1: From Spiritual Identity to Profitable Brand
+1. User completes Identity Discovery questionnaire
+2. Receives personalized spiritual alignment recommendations
+3. Builds brand identity using premium framework
+4. Creates first video using AI generator
+5. Schedules content across platforms
+6. Tracks performance and revenue
+7. Optimizes based on customer psychology insights
+
+### Journey 2: Creating & Monetizing Premium Content
+1. User accesses "How to Get Paid 2 Exist" module
+2. Selects monetization model (products, services, memberships)
+3. Creates product using content strategy framework
+4. Generates promotional videos (1-min & 3-min)
+5. Builds sales funnel with psychology-optimized copy
+6. Launches and tracks revenue
+7. Scales using performance data
+
+### Journey 3: Mastering Customer Psychology
+1. User studies customer psychology module
+2. Learns emotional triggers and buying psychology
+3. Applies copywriting framework to ads
+4. Tests variations using A/B testing
+5. Analyzes emotional resonance scores
+6. Optimizes for maximum conversion
+7. Documents winning formulas in Blueprint Vault
+
+## Color & Branding
+
+**Primary Palette:**
+- **Primary (Teal)**: #0a7ea4 - Action, trust, spiritual alignment
+- **Accent (Gold)**: #D4AF37 - Premium, abundance, divine energy
+- **Success (Green)**: #22C55E - Growth, prosperity, alignment
+- **Warning (Orange)**: #F59E0B - Caution, important notices
+- **Error (Red)**: #EF4444 - Critical issues
+
+**Typography:**
+- **Headlines**: Bold, premium serif (Garamond or similar)
+- **Body**: Clean sans-serif (Inter, Roboto)
+- **Accent**: Elegant script for spiritual elements
 
 ## Navigation Structure
 
-**Tab Bar** (Bottom Navigation):
-1. Dashboard (home icon)
-2. Ecosystems (grid icon)
-3. Workflow (tasks icon)
-4. Generator (sparkle icon)
-5. Scheduler (calendar icon)
-6. Integrations (link icon)
+**Main Tab Bar** (6 primary screens):
+1. Dashboard (home)
+2. Spiritual Identity (compass)
+3. Brand Studio (palette)
+4. Video Generator (film)
+5. Learn & Grow (book)
+6. Monetize (dollar)
 
-**Blueprint Vault**: Accessible via Dashboard card or separate tab if needed
+**Secondary Navigation** (accessible via main screens):
+- Content Strategy & Psychology
+- Scheduler & Distribution
+- Analytics & Performance
+- Blueprint Vault
+- Premium Resources
 
-## Mobile-Specific Considerations
+## Technical Considerations
 
-- **One-handed usage**: All interactive elements within thumb reach
-- **Touch targets**: Minimum 44pt (11mm) for all buttons
-- **Scrollable lists**: Use FlatList for performance
-- **Safe area**: Proper handling of notch and home indicator
-- **Haptic feedback**: Light haptics on button taps, medium on successful actions
-- **Loading states**: Spinner or skeleton screens during async operations
-- **Empty states**: Helpful messages when no data available
+- **Video Generation**: Integration with Kling AI API for professional video creation
+- **AI Features**: LLM integration for script generation, copywriting, and strategy
+- **Data Persistence**: AsyncStorage for local data, optional cloud sync
+- **Real-time Analytics**: Live tracking of content performance
+- **Offline Mode**: Access guides and templates without internet
+- **Push Notifications**: Reminders for spiritual practices and content scheduling
+- **Social Sharing**: One-click sharing of content and achievements
+
+## Premium Features Differentiators
+
+- Professional-grade video generation (not basic)
+- Spiritual alignment framework (unique to this platform)
+- Customer psychology mastery (advanced conversion science)
+- Complete monetization roadmap (from zero to profitable)
+- AI-powered copywriting and strategy (saves 10+ hours per week)
+- Certification and badge system (gamified learning)
+- Community and collaboration features (network effect)
+- White-label options (for agencies and teams)
+
+## Success Metrics
+
+- Users completing spiritual identity assessment
+- Videos created and published
+- Content scheduled and distributed
+- Revenue generated through platform
+- Customer psychology principles applied
+- Engagement and conversion rates
+- User retention and lifetime value

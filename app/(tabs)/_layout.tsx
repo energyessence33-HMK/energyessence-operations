@@ -37,38 +37,38 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="ecosystems"
+        name="spiritual-identity"
         options={{
-          title: "Ecosystems",
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="square.grid.2x2" color={color} />,
-        }}
-      />
-      <Tabs.Screen
-        name="workflow"
-        options={{
-          title: "Workflow",
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="checkmark.circle" color={color} />,
-        }}
-      />
-      <Tabs.Screen
-        name="generator"
-        options={{
-          title: "Generator",
+          title: "Identity",
           tabBarIcon: ({ color }) => <IconSymbol size={28} name="sparkles" color={color} />,
         }}
       />
       <Tabs.Screen
-        name="scheduler"
+        name="brand-studio"
         options={{
-          title: "Scheduler",
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="calendar" color={color} />,
+          title: "Brand",
+          tabBarIcon: ({ color }) => <IconSymbol size={28} name="square.grid.2x2" color={color} />,
         }}
       />
       <Tabs.Screen
-        name="integrations"
+        name="video-generator"
         options={{
-          title: "Integrations",
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="link" color={color} />,
+          title: "Video",
+          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="learn-grow"
+        options={{
+          title: "Learn",
+          tabBarIcon: ({ color }) => <IconSymbol size={28} name="checkmark.circle" color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="monetize"
+        options={{
+          title: "Monetize",
+          tabBarIcon: ({ color }) => <IconSymbol size={28} name="calendar" color={color} />,
         }}
       />
     </Tabs>
