@@ -15,7 +15,8 @@ export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: colors.tint,
+        tabBarActiveTintColor: colors.primary,
+        tabBarInactiveTintColor: colors.muted,
         headerShown: false,
         tabBarButton: HapticTab,
         tabBarStyle: {
@@ -31,8 +32,43 @@ export default function TabLayout() {
       <Tabs.Screen
         name="index"
         options={{
-          title: "Home",
+          title: "Dashboard",
           tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="ecosystems"
+        options={{
+          title: "Ecosystems",
+          tabBarIcon: ({ color }) => <IconSymbol size={28} name="square.grid.2x2" color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="workflow"
+        options={{
+          title: "Workflow",
+          tabBarIcon: ({ color }) => <IconSymbol size={28} name="checkmark.circle" color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="generator"
+        options={{
+          title: "Generator",
+          tabBarIcon: ({ color }) => <IconSymbol size={28} name="sparkles" color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="scheduler"
+        options={{
+          title: "Scheduler",
+          tabBarIcon: ({ color }) => <IconSymbol size={28} name="calendar" color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="integrations"
+        options={{
+          title: "Integrations",
+          tabBarIcon: ({ color }) => <IconSymbol size={28} name="link" color={color} />,
         }}
       />
     </Tabs>
