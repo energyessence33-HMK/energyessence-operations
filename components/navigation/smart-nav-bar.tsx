@@ -1,4 +1,4 @@
-import { View, Text, Pressable, ScrollView } from "react-native";
+import { View, Text, TouchableOpacity, ScrollView } from "react-native";
 import { useRouter, usePathname } from "expo-router";
 import { cn } from "@/lib/utils";
 import { useColors } from "@/hooks/use-colors";
@@ -71,7 +71,7 @@ export function SmartNavBar() {
     <View className="bg-surface border-t border-border">
       {/* Recommended Action Banner */}
       {recommendedAction && (
-        <Pressable
+        <TouchableOpacity
           onPress={() => handleNavigation(recommendedAction.route)}
           className={cn(
             "px-4 py-3 mx-2 mt-2 rounded-lg border-l-4",
@@ -88,7 +88,7 @@ export function SmartNavBar() {
           <Text className="text-xs text-muted mt-1">
             {recommendedAction.description}
           </Text>
-        </Pressable>
+        </TouchableOpacity>
       )}
 
       {/* Navigation Items */}
@@ -99,7 +99,7 @@ export function SmartNavBar() {
         contentContainerStyle={{ gap: 8 }}
       >
         {navItems.map((item) => (
-          <Pressable
+          <TouchableOpacity
             key={item.route}
             onPress={() => handleNavigation(item.route)}
             className={cn(
@@ -131,7 +131,7 @@ export function SmartNavBar() {
             {item.isNew && (
               <View className="w-2 h-2 rounded-full bg-success" />
             )}
-          </Pressable>
+          </TouchableOpacity>
         ))}
       </ScrollView>
 
