@@ -18,6 +18,7 @@ interface ProfessionalLeftNavProps {
   onItemPress?: (item: NavItem) => void;
   width?: number;
   isCollapsed?: boolean;
+  onCollapse?: () => void;
 }
 
 export function ProfessionalLeftNav({
@@ -25,6 +26,7 @@ export function ProfessionalLeftNav({
   onItemPress,
   width = 280,
   isCollapsed = false,
+  onCollapse,
 }: ProfessionalLeftNavProps) {
   const colors = useColors();
   const router = useRouter();
