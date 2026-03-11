@@ -1,0 +1,69 @@
+{
+  "name": "Kingdom Executor Studio",
+  "version": 2,
+  "env": {
+    "DATABASE_URL": "@database_url",
+    "JWT_SECRET": "@jwt_secret",
+    "SENDGRID_API_KEY": "@sendgrid_api_key",
+    "STRIPE_SECRET_KEY": "@stripe_secret_key",
+    "KLING_ACCESS_KEY": "@kling_access_key",
+    "KLING_SECRET_KEY": "@kling_secret_key",
+    "NODE_ENV": "production"
+  },
+  "buildCommand": "pnpm build",
+  "devCommand": "pnpm dev",
+  "installCommand": "pnpm install",
+  "framework": "expo",
+  "regions": ["sfo1", "iad1"],
+  "functions": {
+    "server/**/*.ts": {
+      "memory": 1024,
+      "maxDuration": 30
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "/server/api/$1"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/old-page",
+      "destination": "/",
+      "permanent": true
+    }
+  ],
+  "headers": [
+    {
+      "source": "/api/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-cache, no-store, must-revalidate"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Strict-Transport-Security",
+          "value": "max-age=31536000; includeSubDomains"
+        }
+      ]
+    }
+  ]
+}
