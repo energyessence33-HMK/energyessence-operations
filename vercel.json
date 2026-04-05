@@ -2,13 +2,9 @@
   "name": "Kingdom Executor Studio",
   "version": 2,
   "env": {
-    "DATABASE_URL": "@database_url",
     "JWT_SECRET": "@jwt_secret",
-    "SENDGRID_API_KEY": "@sendgrid_api_key",
-    "STRIPE_SECRET_KEY": "@stripe_secret_key",
-    "KLING_ACCESS_KEY": "@kling_access_key",
-    "KLING_SECRET_KEY": "@kling_secret_key",
-    "NODE_ENV": "production"
+    "NODE_ENV": "production",
+    "NEXT_PUBLIC_APP_URL": "https://energyessence2.store"
   },
   "buildCommand": "pnpm build",
   "devCommand": "pnpm dev",
