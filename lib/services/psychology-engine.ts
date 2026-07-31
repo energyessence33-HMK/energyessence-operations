@@ -97,7 +97,8 @@ class PsychologyEngine {
 
     // Identify psychology principles
     const principles = this.identifyPsychologyPrinciples(
-      uniqueTriggers
+      uniqueTriggers,
+      content
     );
 
     // Generate recommendations
@@ -183,7 +184,7 @@ class PsychologyEngine {
    */
   private scoreHeadline(headline: string): number {
     let score = 50;
-    // const length = headline.length; // Headline length used for word count analysis below
+    const length = headline.length;
 
     // Optimal headline length is 6-12 words
     const wordCount = headline.split(" ").length;
@@ -317,8 +318,8 @@ class PsychologyEngine {
    * Identify psychology principles present in content
    */
   private identifyPsychologyPrinciples(
-    triggers: string[]
-    // content: string // Content analysis for psychology principles
+    triggers: string[],
+    content: string
   ): string[] {
     const principles: string[] = [];
 

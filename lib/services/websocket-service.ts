@@ -12,7 +12,7 @@ export interface WebSocketMessage {
 export class WebSocketService {
   private static instance: WebSocketService;
   private ws: WebSocket | null = null;
-  private url: string; // WebSocket connection URL
+  private url: string;
   private reconnectAttempts = 0;
   private maxReconnectAttempts = 5;
   private reconnectDelay = 3000;
@@ -101,14 +101,14 @@ export class WebSocketService {
   /**
    * Handle WebSocket message
    */
-  // private handleMessage(event: MessageEvent): void {
-  //   try {
-  //     const message: WebSocketMessage = JSON.parse(event.data);
-  //     this.emit(message.type, message.data);
-  //   } catch (error) {
-  //     console.error('Error parsing WebSocket message:', error);
-  //   }
-  // }
+  private handleMessage(event: MessageEvent): void {
+    try {
+      const message: WebSocketMessage = JSON.parse(event.data);
+      this.emit(message.type, message.data);
+    } catch (error) {
+      console.error('Error parsing WebSocket message:', error);
+    }
+  }
 
   /**
    * Handle reconnection
