@@ -1,43 +1,49 @@
 {
-  "name": "Kingdom Executor Studio",
   "version": 2,
+  "name": "kingdom-executor-studio",
+  "public": false,
   "env": {
-    "JWT_SECRET": "@jwt_secret",
     "NODE_ENV": "production",
-    "NEXT_PUBLIC_APP_URL": "https://energyessence2.store"
+    "APP_NAME": "Kingdom Executor Studio",
+    "APP_VERSION": "8.0.0"
   },
-  "buildCommand": "pnpm build",
+  "build": {
+    "env": {
+      "NODE_ENV": "production"
+    }
+  },
+  "buildCommand": "pnpm install --frozen-lockfile && pnpm build",
   "devCommand": "pnpm dev",
-  "installCommand": "pnpm install",
+  "installCommand": "pnpm install --frozen-lockfile",
   "framework": "expo",
-  "regions": ["sfo1", "iad1"],
+  "regions": ["iad1"],
   "functions": {
-    "server/**/*.ts": {
-      "memory": 1024,
-      "maxDuration": 30
+    "api/**/*.ts": {
+      "maxDuration": 60,
+      "memory": 1024
     }
   },
   "rewrites": [
     {
       "source": "/api/(.*)",
-      "destination": "/server/api/$1"
+      "destination": "/api/$1"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ],
   "redirects": [
     {
-      "source": "/old-page",
-      "destination": "/",
+      "source": "/old-path",
+      "destination": "/new-path",
       "permanent": true
     }
   ],
   "headers": [
     {
-      "source": "/api/(.*)",
+      "source": "/(.*)",
       "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "no-cache, no-store, must-revalidate"
-        },
         {
           "key": "X-Content-Type-Options",
           "value": "nosniff"
@@ -49,17 +55,38 @@
         {
           "key": "X-XSS-Protection",
           "value": "1; mode=block"
-        }
-      ]
-    },
-    {
-      "source": "/(.*)",
-      "headers": [
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "geolocation=(), microphone=(), camera=()"
+        },
         {
           "key": "Strict-Transport-Security",
           "value": "max-age=31536000; includeSubDomains"
+        },
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https:; frame-ancestors 'none';"
         }
       ]
+    }
+  ],
+  "crons": [
+    {
+      "path": "/api/cron/analytics",
+      "schedule": "0 * * * *"
+    },
+    {
+      "path": "/api/cron/notifications",
+      "schedule": "*/5 * * * *"
+    },
+    {
+      "path": "/api/cron/sync",
+      "schedule": "0 */6 * * *"
     }
   ]
 }
