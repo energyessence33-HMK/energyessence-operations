@@ -261,10 +261,11 @@ export class AdminAuthService {
   /**
    * Get admin activity log
    */
-  static async getActivityLog(limit: number = 50): Promise<Array<any>> {
+  static async getActivityLog(/* limit: number = 50 */): Promise<Array<any>> {
     try {
       // TODO: Integrate with backend activity logging
       // This is a placeholder implementation
+      // const limit = 50; // Activity log limit
 
       return [
         {

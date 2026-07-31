@@ -143,8 +143,8 @@ class KlingAIService {
     content: string,
     duration: "1_min" | "3_min"
   ): { script: string; voiceoverDuration: number } {
-    const words = content.split(" ").length;
-    const targetWords = duration === "1_min" ? 150 : 400; // Approximate words per minute
+    // const words = content.split(" ").length; // Word count for duration calculation
+    // const targetWords = duration === "1_min" ? 150 : 400; // Approximate words per minute
 
     // Professional script formatting
     const script = `

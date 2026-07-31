@@ -1,4 +1,5 @@
-import Animated, {
+// import Animated, { // Animated component for React Native animations
+import {
   useSharedValue,
   useAnimatedStyle,
   withRepeat,
