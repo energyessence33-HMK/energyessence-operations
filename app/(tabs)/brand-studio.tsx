@@ -13,7 +13,7 @@ interface BrandTool {
 }
 
 export default function BrandStudioScreen() {
-  const colors = useColors();
+  // const colors = useColors(); // Theme colors for styling
   const [selectedTool, setSelectedTool] = useState<string | null>(null);
 
   const brandTools: BrandTool[] = [

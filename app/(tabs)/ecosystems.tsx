@@ -1,4 +1,5 @@
-import { ScrollView, Text, View, TouchableOpacity, FlatList } from "react-native";
+import { ScrollView, View, Text, TouchableOpacity, Pressable } from "react-native";
+// import { FlatList } from "react-native"; // Flat list component
 import { useState } from "react";
 
 import { ScreenContainer } from "@/components/screen-container";
@@ -12,7 +13,7 @@ interface Ecosystem {
 }
 
 export default function EcosystemsScreen() {
-  const colors = useColors();
+  // const colors = useColors(); // Theme colors
   const [ecosystems, setEcosystems] = useState<Ecosystem[]>([
     {
       id: "1",

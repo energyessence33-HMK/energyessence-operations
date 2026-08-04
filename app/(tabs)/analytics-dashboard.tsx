@@ -1,8 +1,9 @@
-import { ScrollView, View, Text, Dimensions } from 'react-native';
+import { ScrollView, View, Text } from 'react-native';
 import { ScreenContainer } from '@/components/screen-container';
 import { AnalyticsDashboardService, type AnalyticsDashboardMetrics } from '@/lib/services/analytics-dashboard-service';
 import { useEffect, useState } from 'react';
 import { useColors } from '@/hooks/use-colors';
+// import { Dimensions } from 'react-native'; // Screen dimensions
 
 /**
  * Real-time Analytics Dashboard
@@ -19,7 +20,7 @@ interface MetricCard {
 export default function AnalyticsDashboard() {
   const colors = useColors();
   const [metrics, setMetrics] = useState<AnalyticsDashboardMetrics | null>(null);
-  const [loading, setLoading] = useState(true);
+  // const [loading, setLoading] = useState(true); // Loading state for metrics
 
   useEffect(() => {
     loadMetrics();

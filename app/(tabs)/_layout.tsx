@@ -19,8 +19,8 @@ export default function TabLayout() {
 
   // Determine layout based on screen size
   const isMobile = Platform.OS === "web" ? width < 768 : true;
-  const isTablet = Platform.OS === "web" ? width >= 768 && width < 1024 : false;
-  const isDesktop = Platform.OS === "web" ? width >= 1024 : false;
+  // const isTablet = Platform.OS === "web" ? width >= 768 && width < 1024 : false; // Tablet detection
+  // const isDesktop = Platform.OS === "web" ? width >= 1024 : false; // Desktop detection
   const showLeftNav = !isMobile; // Show left nav on tablet and desktop
 
   const bottomPadding = Platform.OS === "web" ? 12 : Math.max(insets.bottom, 8);
