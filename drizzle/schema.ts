@@ -225,3 +225,40 @@ export const analyticsEvents = mysqlTable("analytics_events", {
 
 export type AnalyticsEvent = typeof analyticsEvents.$inferSelect;
 export type InsertAnalyticsEvent = typeof analyticsEvents.$inferInsert;
+
+/**
+ * Audit Events
+ * An append-only evidence record for governed connector execution. Secrets and
+ * raw credentials are intentionally excluded; input is represented by a hash.
+ */
+export const auditEvents = mysqlTable("audit_events", {
+  id: int("id").autoincrement().primaryKey(),
+  orgId: varchar("orgId", { length: 128 }).notNull(),
+  actorType: mysqlEnum("actorType", ["user", "service", "system"]).notNull(),
+  actorId: varchar("actorId", { length: 128 }).notNull(),
+  provider: varchar("provider", { length: 128 }).notNull(),
+  action: varchar("action", { length: 255 }).notNull(),
+  target: varchar("target", { length: 512 }).notNull(),
+  riskLevel: mysqlEnum("riskLevel", ["L0", "L1", "L2", "L3", "L4"]).notNull(),
+  inputHash: varchar("inputHash", { length: 128 }).notNull(),
+  status: mysqlEnum("status", [
+    "draft",
+    "awaiting_approval",
+    "approved",
+    "executing",
+    "succeeded",
+    "failed",
+    "rejected",
+    "cancelled",
+  ]).notNull(),
+  result: json("result").$type<Record<string, unknown> | null>(),
+  error: text("error"),
+  approvalRequired: boolean("approvalRequired").default(false).notNull(),
+  approvedBy: varchar("approvedBy", { length: 128 }),
+  approvedAt: timestamp("approvedAt"),
+  rollbackReference: varchar("rollbackReference", { length: 512 }),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+});
+
+export type AuditEvent = typeof auditEvents.$inferSelect;
+export type InsertAuditEvent = typeof auditEvents.$inferInsert;

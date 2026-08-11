@@ -17,7 +17,15 @@ export function AnimatedList<T>({
     data.map(() => new Animated.Value(0))
   ).current;
 
+  while (animatedValues.length < data.length) {
+    animatedValues.push(new Animated.Value(0));
+  }
+  if (animatedValues.length > data.length) {
+    animatedValues.splice(data.length);
+  }
+
   useEffect(() => {
+    animatedValues.forEach((anim) => anim.setValue(0));
     Animated.stagger(
       itemDelay,
       animatedValues.map((anim) =>
@@ -28,7 +36,7 @@ export function AnimatedList<T>({
         })
       )
     ).start();
-  }, [data.length]);
+  }, [animatedValues, data.length, itemDelay]);
 
   return (
     <FlatList

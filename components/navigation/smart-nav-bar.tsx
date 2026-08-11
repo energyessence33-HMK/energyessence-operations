@@ -2,7 +2,7 @@ import { View, Text, TouchableOpacity, ScrollView } from "react-native";
 import { useRouter, usePathname } from "expo-router";
 import { cn } from "@/lib/utils";
 import { smartRouter, type NavigationRoute } from "@/lib/navigation/smart-router";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 interface NavItem {
   name: string;
@@ -18,11 +18,7 @@ export function SmartNavBar() {
   const [navItems, setNavItems] = useState<NavItem[]>([]);
   const [recommendedAction, setRecommendedAction] = useState<any>(null);
 
-  useEffect(() => {
-    loadNavigation();
-  }, []);
-
-  const loadNavigation = async () => {
+  const loadNavigation = useCallback(async () => {
     // Get recommended action
     const action = await smartRouter.getRecommendedAction();
     setRecommendedAction(action);
@@ -44,7 +40,7 @@ export function SmartNavBar() {
       const canAccess = await smartRouter.canAccessRoute(item.route);
       if (canAccess) {
         // Add badge to recommended action
-        if (item.route === recommendedAction?.route) {
+        if (item.route === action?.route) {
           item.badge = 1;
           item.isNew = true;
         }
@@ -53,7 +49,11 @@ export function SmartNavBar() {
     }
 
     setNavItems(accessibleItems);
-  };
+  }, []);
+
+  useEffect(() => {
+    void loadNavigation();
+  }, [loadNavigation]);
 
   const handleNavigation = async (route: NavigationRoute) => {
     const currentRoute = pathname.split("/").pop() as NavigationRoute;

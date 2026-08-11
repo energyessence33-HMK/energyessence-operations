@@ -61,7 +61,7 @@ export default function SpiritualIdentityScreen() {
           {/* Daily Affirmation */}
           <View className="bg-gradient-to-r from-primary to-primary bg-opacity-10 rounded-xl p-6 border border-primary border-opacity-30">
             <Text className="text-xs font-semibold text-primary mb-3">
-              TODAY'S AFFIRMATION
+              {"TODAY'S AFFIRMATION"}
             </Text>
             <Text className="text-lg font-bold text-foreground leading-relaxed">
               {affirmation}
@@ -173,9 +173,7 @@ export default function SpiritualIdentityScreen() {
             </Text>
             <View className="bg-surface rounded-lg p-4 border border-border">
               <Text className="text-sm text-foreground leading-relaxed">
-                "I create authentic, Christ-aligned content that serves others
-                and generates abundance through truth, alignment, and divine
-                purpose."
+                {"“I create authentic, Christ-aligned content that serves others and generates abundance through truth, alignment, and divine purpose.”"}
               </Text>
             </View>
             <TouchableOpacity className="bg-primary rounded-lg p-3 items-center">

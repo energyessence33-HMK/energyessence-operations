@@ -172,3 +172,37 @@
 - [ ] Verify Slack webhook and Notion workspace/database connections
 - [ ] Complete Canva MCP design workflow when the connector is responsive
 - [ ] Run production build and end-to-end smoke tests
+- [ ] Audit enabled connectors for reachability, authorization, and least-privilege scope
+- [ ] Verify GitHub repository publication and CI/CD secret references
+- [ ] Verify Slack and Notion connectors with safe read-only operations
+- [ ] Verify Canva connector availability and document any authorization or service blocker
+- [ ] Verify commerce, messaging, analytics, and deployment integration configuration
+- [ ] Add verified connector health and synchronization evidence to the operating documentation
+- [ ] Extract current project, domain, product, and integration data into a market analysis baseline
+- [ ] Research global competitors across creator tools, spiritual wellness, journaling, and faith-led commerce
+- [ ] Analyze organic search/discovery dynamics and category-level content opportunities
+- [ ] Define a defensible positioning statement and four-domain brand architecture
+- [ ] Prioritize product, content, conversion, and integration upgrades from research findings
+- [ ] Implement and test the highest-impact validated upgrades
+- [ ] Publish an evidence-based launch readiness and market-position report
+- [ ] Reconcile the supplied Kingdom Executor AI OS governance blueprint with the implemented codebase
+- [ ] Create a capability-evidence matrix using planned, scaffolded, implemented, tested, integrated, staging-verified, and production-verified states
+- [ ] Implement a Scripture Governance Layer that separates Scripture, interpretation, design metaphor, AI inference, and technical fact
+- [ ] Implement risk-tiered human approval controls for consequential external and production actions
+- [ ] Align interface language and motion with the timelessness-to-motion-to-review-to-rest operating rhythm
+- [ ] Define scientifically honest resonance vocabulary and remove unsupported supernatural or frequency claims
+- [ ] Convert the Receive-to-Rest execution loop into visible product workflow and audit controls
+- [ ] Complete Phase 0 evidence audit and obtain approval before implementing governance or integration changes
+- [ ] Reconcile Command Center, knowledge, planning, risk, approval, execution, verification, and reporting flow with current implementation evidence
+- [x] Extract and index Kingdom Executor AI OS Master Blueprint v2.1 as a future architectural reference
+- [ ] Reconcile Blueprint v2.1 terminology, governance controls, and phased delivery requirements against the existing code and audit evidence
+- [x] Implement local integration-adapter contract and capability registry without embedding connector secrets
+- [x] Implement approval, execution, and immutable audit-event domain models before external action support
+- [ ] Add connector health, capability, and last-verified metadata with truthful status vocabulary
+- [ ] Fetch available connector data through read-only scoped verification before proposing synchronization
+- [ ] Prepare human-approval packets for any connector action that creates, updates, publishes, sends, deploys, or changes permissions
+- [ ] Apply only approved connector updates and record reconciliation outcomes
+- [x] Enforce server-boundary token-bucket limits for API and authentication routes
+- [x] Replace dashboard placeholder metrics with authenticated, database-backed tRPC queries and truthful empty states
+- [x] Replace local integration toggles with registry-backed evidence statuses and approval-boundary messaging
+- [x] Repair JSX entity errors and React Hook dependency warnings; retain passing static analysis

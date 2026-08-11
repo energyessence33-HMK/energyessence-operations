@@ -188,7 +188,7 @@ export default function SettingsScreen() {
         {/* Footer Info */}
         <View className="px-6 py-4 bg-surface rounded-lg mx-6 mb-6">
           <Text className="text-xs text-muted text-center">
-            Your preferences are automatically saved and synced across all devices when you're logged in.
+            Your preferences are automatically saved and synced across all devices when you{"'"}re logged in.
           </Text>
         </View>
       </ScrollView>

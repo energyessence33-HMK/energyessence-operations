@@ -6,6 +6,7 @@ import { createExpressMiddleware } from "@trpc/server/adapters/express";
 import { registerOAuthRoutes } from "./oauth";
 import { appRouter } from "../routers";
 import { createContext } from "./context";
+import { apiRateLimiters } from "../../lib/services/rate-limiter";
 
 function isPortAvailable(port: number): Promise<boolean> {
   return new Promise((resolve) => {
@@ -53,6 +54,38 @@ async function startServer() {
 
   app.use(express.json({ limit: "50mb" }));
   app.use(express.urlencoded({ limit: "50mb", extended: true }));
+
+  app.use("/api", (req, res, next) => {
+    if (req.path === "/health") {
+      next();
+      return;
+    }
+
+    const forwardedFor = req.headers["x-forwarded-for"];
+    const forwardedAddress = Array.isArray(forwardedFor)
+      ? forwardedFor[0]
+      : forwardedFor?.split(",")[0]?.trim();
+    const clientKey = forwardedAddress || req.socket.remoteAddress || "anonymous";
+    const limiter = req.path.includes("oauth") ? apiRateLimiters.authentication : apiRateLimiters.general;
+
+    if (!limiter.isAllowed(clientKey)) {
+      const status = limiter.getStatus(clientKey);
+      const retryAfterSeconds = Math.max(1, Math.ceil((status.resetTime - Date.now()) / 1000));
+      res.setHeader("Retry-After", retryAfterSeconds.toString());
+      res.setHeader("X-RateLimit-Remaining", status.remaining.toString());
+      res.setHeader("X-RateLimit-Reset", Math.ceil(status.resetTime / 1000).toString());
+      res.status(429).json({
+        error: "rate_limit_exceeded",
+        retryAfterSeconds,
+      });
+      return;
+    }
+
+    const status = limiter.getStatus(clientKey);
+    res.setHeader("X-RateLimit-Remaining", status.remaining.toString());
+    res.setHeader("X-RateLimit-Reset", Math.ceil(status.resetTime / 1000).toString());
+    next();
+  });
 
   registerOAuthRoutes(app);
 

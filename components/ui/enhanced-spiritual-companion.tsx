@@ -46,7 +46,7 @@ export function EnhancedSpiritualCompanion({
       glow.startGlow();
       float.startFloating();
     }
-  }, [isVisible]);
+  }, [breathing, float, glow, isVisible]);
 
   const handleNewAffirmation = () => {
     const newAffirmation = getRandomAffirmation();
@@ -177,7 +177,7 @@ export function EnhancedSpiritualCompanion({
               className="text-base leading-relaxed text-center font-semibold"
               style={{ color: colors.foreground }}
             >
-              "{currentAffirmation.text}"
+              {`“${currentAffirmation.text}”`}
             </Text>
 
             {currentAffirmation.scriptureRef && (

@@ -1,0 +1,20 @@
+CREATE TABLE `audit_events` (
+	`id` int AUTO_INCREMENT NOT NULL,
+	`orgId` varchar(128) NOT NULL,
+	`actorType` enum('user','service','system') NOT NULL,
+	`actorId` varchar(128) NOT NULL,
+	`provider` varchar(128) NOT NULL,
+	`action` varchar(255) NOT NULL,
+	`target` varchar(512) NOT NULL,
+	`riskLevel` enum('L0','L1','L2','L3','L4') NOT NULL,
+	`inputHash` varchar(128) NOT NULL,
+	`status` enum('draft','awaiting_approval','approved','executing','succeeded','failed','rejected','cancelled') NOT NULL,
+	`result` json,
+	`error` text,
+	`approvalRequired` boolean NOT NULL DEFAULT false,
+	`approvedBy` varchar(128),
+	`approvedAt` timestamp,
+	`rollbackReference` varchar(512),
+	`createdAt` timestamp NOT NULL DEFAULT (now()),
+	CONSTRAINT `audit_events_id` PRIMARY KEY(`id`)
+);

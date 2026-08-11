@@ -1,6 +1,14 @@
-import { eq } from "drizzle-orm";
+import { desc, eq } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
-import { InsertUser, users } from "../drizzle/schema";
+import {
+  auditEvents,
+  ecosystems,
+  type InsertAuditEvent,
+  type InsertUser,
+  scheduledPosts,
+  users,
+  workflows,
+} from "../drizzle/schema";
 import { ENV } from "./_core/env";
 
 let _db: ReturnType<typeof drizzle> | null = null;
@@ -89,4 +97,66 @@ export async function getUserByOpenId(openId: string) {
   return result.length > 0 ? result[0] : undefined;
 }
 
-// TODO: add feature queries here as your schema grows.
+export async function listWorkflowsForUser(userId: number) {
+  const db = await getDb();
+  if (!db) return [];
+
+  return db
+    .select()
+    .from(workflows)
+    .where(eq(workflows.userId, userId))
+    .orderBy(desc(workflows.updatedAt));
+}
+
+export async function createWorkflowForUser(
+  userId: number,
+  input: Pick<typeof workflows.$inferInsert, "title" | "description" | "priority" | "dueDate">,
+) {
+  const db = await getDb();
+  if (!db) {
+    throw new Error("Database is not available for workflow creation");
+  }
+
+  await db.insert(workflows).values({
+    userId,
+    title: input.title,
+    description: input.description ?? null,
+    priority: input.priority,
+    dueDate: input.dueDate ?? null,
+    status: "active",
+    dependencies: [],
+  });
+
+  return { created: true } as const;
+}
+
+export async function listScheduledPostsForUser(userId: number) {
+  const db = await getDb();
+  if (!db) return [];
+
+  return db
+    .select()
+    .from(scheduledPosts)
+    .where(eq(scheduledPosts.userId, userId))
+    .orderBy(desc(scheduledPosts.scheduledTime));
+}
+
+export async function listEcosystemsForUser(userId: number) {
+  const db = await getDb();
+  if (!db) return [];
+
+  return db
+    .select()
+    .from(ecosystems)
+    .where(eq(ecosystems.userId, userId))
+    .orderBy(desc(ecosystems.updatedAt));
+}
+
+export async function recordAuditEvent(event: InsertAuditEvent): Promise<void> {
+  const db = await getDb();
+  if (!db) {
+    throw new Error("Database is not available for audit recording");
+  }
+
+  await db.insert(auditEvents).values(event);
+}
