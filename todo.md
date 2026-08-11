@@ -207,3 +207,10 @@
 - [x] Replace dashboard placeholder metrics with authenticated, database-backed tRPC queries and truthful empty states
 - [x] Replace local integration toggles with registry-backed evidence statuses and approval-boundary messaging
 - [x] Repair JSX entity errors and React Hook dependency warnings; retain passing static analysis
+- [x] Triage supplied Thought2Ponder PDFs, Energy Essence landing-page source, and Printify/Shopify screenshots without retaining or embedding sensitive screenshot data
+- [x] Create structured Thought2Ponder and Energy Essence reference catalogs with accurate titles, provenance, and opening policy
+- [x] Implement a Thought2Ponder resource-library experience inside Kingdom Executor with Scripture, interpretation, AI-inference, and technical-fact labels
+- [x] Add a landing-informed Energy Essence experience module and a Printify commerce-governance surface without storing credentials or payout information
+- [ ] Document and remediate exposed Shopify client-secret and automation-token evidence through provider-side rotation and revocation
+- [x] Validate the new resource and commerce-governance features with static analysis, tests, and accessibility review
+- [x] Document the confidential credential-remediation protocol and approval-gated provider activation path without retaining secret values

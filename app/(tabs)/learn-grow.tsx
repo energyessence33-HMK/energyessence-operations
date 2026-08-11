@@ -2,6 +2,7 @@ import { ScrollView, Text, View, TouchableOpacity } from "react-native";
 import { useState } from "react";
 
 import { ScreenContainer } from "@/components/screen-container";
+import { Thought2PonderResourceLibrary } from "@/components/resources/thought2ponder-resource-library";
 
 interface Course {
   id: string;
@@ -9,13 +10,6 @@ interface Course {
   description: string;
   modules: number;
   progress: number;
-  icon: string;
-}
-
-interface Resource {
-  id: string;
-  title: string;
-  type: string;
   icon: string;
 }
 
@@ -63,15 +57,6 @@ export default function LearnGrowScreen() {
       progress: 15,
       icon: "💰",
     },
-  ];
-
-  const resources: Resource[] = [
-    { id: "1", title: "Brand Strategy Template", type: "PDF", icon: "📄" },
-    { id: "2", title: "Copywriting Swipe File", type: "PDF", icon: "📄" },
-    { id: "3", title: "Psychology Principles", type: "Video", icon: "🎥" },
-    { id: "4", title: "Sales Funnel Guide", type: "Guide", icon: "📖" },
-    { id: "5", title: "Pricing Strategy", type: "Worksheet", icon: "📊" },
-    { id: "6", title: "Case Studies", type: "Video", icon: "🎥" },
   ];
 
   return (
@@ -139,34 +124,7 @@ export default function LearnGrowScreen() {
                 ))}
               </View>
 
-              {/* Resources Section */}
-              <View className="gap-3">
-                <Text className="text-lg font-bold text-foreground">
-                  Premium Resources
-                </Text>
-
-                <View className="gap-2">
-                  {resources.map((resource) => (
-                    <TouchableOpacity
-                      key={resource.id}
-                      className="bg-surface rounded-lg p-4 border border-border flex-row items-center justify-between"
-                    >
-                      <View className="flex-row items-center gap-3 flex-1">
-                        <Text className="text-2xl">{resource.icon}</Text>
-                        <View className="flex-1 gap-1">
-                          <Text className="text-sm font-semibold text-foreground">
-                            {resource.title}
-                          </Text>
-                          <Text className="text-xs text-muted">
-                            {resource.type}
-                          </Text>
-                        </View>
-                      </View>
-                      <Text className="text-primary">→</Text>
-                    </TouchableOpacity>
-                  ))}
-                </View>
-              </View>
+              <Thought2PonderResourceLibrary />
 
               {/* Certification Path */}
               <View className="gap-3">

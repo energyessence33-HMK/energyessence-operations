@@ -2,6 +2,7 @@ import { ScrollView, Text, View, TouchableOpacity } from "react-native";
 import { useState } from "react";
 
 import { ScreenContainer } from "@/components/screen-container";
+import { PrintifyGovernanceCard } from "@/components/commerce/printify-governance-card";
 
 interface MonetizationModel {
   id: string;
@@ -113,14 +114,14 @@ export default function MonetizeScreen() {
 
           {/* Premium Badge */}
           <View className="bg-gradient-to-r from-primary to-primary bg-opacity-10 rounded-lg p-4 border border-primary border-opacity-30">
-            <View className="flex-row items-center gap-2">
-              <Text className="text-xl">💰</Text>
+              <View className="flex-row items-center gap-2">
+              <Text className="text-xl font-bold text-primary">KE</Text>
               <View className="flex-1">
                 <Text className="text-sm font-bold text-primary">
-                  Complete Monetization System
+                  Governed Monetization System
                 </Text>
                 <Text className="text-xs text-muted">
-                  From zero to profitable in 90 days
+                  Build commercial systems with review points, clear ownership, and accountable execution.
                 </Text>
               </View>
             </View>
@@ -164,6 +165,8 @@ export default function MonetizeScreen() {
                 ))}
               </View>
 
+              <PrintifyGovernanceCard />
+
               {/* Learning Modules */}
               <View className="gap-3">
                 <Text className="text-lg font-bold text-foreground">
@@ -197,16 +200,16 @@ export default function MonetizeScreen() {
                 </Text>
                 <View className="bg-surface rounded-lg p-4 border border-border gap-3">
                   <View className="gap-1">
-                    <Text className="text-xs text-muted">Monthly Revenue</Text>
-                    <Text className="text-3xl font-bold text-primary">
-                      $0
-                    </Text>
+                    <Text className="text-xs text-muted">Commerce data</Text>
+                    <Text className="text-base font-semibold text-foreground">Not connected</Text>
                   </View>
                   <View className="gap-1">
                     <Text className="text-xs text-muted">
-                      Revenue Streams Active
+                      Activation boundary
                     </Text>
-                    <Text className="text-2xl font-bold text-foreground">0</Text>
+                    <Text className="text-sm font-semibold text-foreground">
+                      Provider approval required
+                    </Text>
                   </View>
                 </View>
               </View>
