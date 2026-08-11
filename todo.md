@@ -198,10 +198,11 @@
 - [ ] Reconcile Blueprint v2.1 terminology, governance controls, and phased delivery requirements against the existing code and audit evidence
 - [x] Implement local integration-adapter contract and capability registry without embedding connector secrets
 - [x] Implement approval, execution, and immutable audit-event domain models before external action support
-- [ ] Add connector health, capability, and last-verified metadata with truthful status vocabulary
-- [ ] Fetch available connector data through read-only scoped verification before proposing synchronization
-- [ ] Prepare human-approval packets for any connector action that creates, updates, publishes, sends, deploys, or changes permissions
+- [x] Add connector health, capability, and last-verified metadata with truthful status vocabulary
+- [x] Fetch available connector data through read-only scoped verification before proposing synchronization
+- [x] Prepare human-approval packets for any connector action that creates, updates, publishes, sends, deploys, or changes permissions
 - [ ] Apply only approved connector updates and record reconciliation outcomes
+- [x] Produce the Phase 0 evidence audit and connector verification register
 - [x] Enforce server-boundary token-bucket limits for API and authentication routes
 - [x] Replace dashboard placeholder metrics with authenticated, database-backed tRPC queries and truthful empty states
 - [x] Replace local integration toggles with registry-backed evidence statuses and approval-boundary messaging

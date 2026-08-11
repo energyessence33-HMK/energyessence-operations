@@ -65,6 +65,9 @@ export default function IntegrationsScreen() {
                     <Text className={`font-semibold ${titleClass}`}>{integration.displayName}</Text>
                     <Text className="text-xs text-muted">{integration.description}</Text>
                     <Text className="text-xs text-muted mt-1">Mode: {integration.connectionMode}</Text>
+                    <Text className="text-xs text-muted mt-1">
+                      Last verification: {integration.lastVerifiedAt ?? "not yet verified"}
+                    </Text>
                   </View>
                   <View className={`px-3 py-1 rounded-full ${badgeClass}`}>
                     <Text className="text-xs font-semibold text-background">

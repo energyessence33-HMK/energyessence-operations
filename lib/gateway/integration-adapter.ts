@@ -24,6 +24,8 @@ export interface IntegrationMetadata {
   connectionMode: "mcp" | "oauth" | "api_key" | "webhook" | "native";
   evidenceStatus: IntegrationEvidenceStatus;
   description: string;
+  lastVerifiedAt?: string;
+  verificationDetail?: string;
 }
 
 export interface IntegrationStatus {
