@@ -228,3 +228,7 @@
 - [x] Audit and reconcile available platform, connector, and plugin capabilities into one least-privilege operational inventory
 - [ ] Optimize truthful status, empty states, and approval feedback across command, integrations, commerce, and learning surfaces
 - [ ] Remove or quarantine obsolete configuration paths that imply unverified automation, deployment, financial, or privileged capabilities
+- [x] Implement a credential-containment readiness screen that records provider, exposure state, cutover order, and approval boundary without storing secret values
+- [x] Add an auditable local preflight for credential rotation that remains non-executing until an administrator approves EA-001
+- [x] Validate the credential-remediation experience for secret leakage, role enforcement, and clear post-rotation verification guidance
+- [ ] Obtain explicit approval before any provider-side credential rotation, revocation, or connection update
