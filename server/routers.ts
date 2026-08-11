@@ -1,5 +1,7 @@
 import { COOKIE_NAME } from "../shared/const.js";
 import { GOVERNED_INTEGRATIONS } from "../lib/gateway/integration-registry";
+import { governancePreflight } from "../lib/gateway/governance-preflight";
+import { PERMISSION_LEVELS } from "../lib/gateway/execution-models";
 import { z } from "zod";
 import { getSessionCookieOptions } from "./_core/cookies";
 import { systemRouter } from "./_core/systemRouter";
@@ -44,6 +46,60 @@ export const appRouter = router({
 
   integrations: router({
     registry: publicProcedure.query(() => GOVERNED_INTEGRATIONS),
+  }),
+
+  governance: router({
+    list: protectedProcedure
+      .input(z.object({ limit: z.number().int().min(1).max(100).default(25) }).optional())
+      .query(({ ctx, input }) => db.listAuditEventsForActor(String(ctx.user.id), input?.limit)),
+    request: protectedProcedure
+      .input(
+        z.object({
+          provider: z.string().trim().min(1).max(128),
+          action: z.string().trim().min(1).max(255),
+          target: z.string().trim().min(1).max(512),
+          riskLevel: z.enum(PERMISSION_LEVELS),
+          summary: z.string().trim().min(1).max(2000),
+          rollbackReference: z.string().trim().max(512).optional(),
+        }),
+      )
+      .mutation(async ({ ctx, input }) => {
+        const preflight = governancePreflight(input);
+        await db.recordAuditEvent({
+          orgId: `user:${ctx.user.id}`,
+          actorType: "user",
+          actorId: String(ctx.user.id),
+          provider: input.provider,
+          action: input.action,
+          target: input.target,
+          riskLevel: input.riskLevel,
+          inputHash: preflight.inputHash,
+          status: preflight.status === "blocked" ? "draft" : preflight.status,
+          result: {
+            summary: input.summary,
+            executionPermitted: false,
+          },
+          approvalRequired: preflight.approvalRequired,
+          rollbackReference: input.rollbackReference ?? null,
+        });
+
+        return preflight;
+      }),
+    decide: protectedProcedure
+      .input(
+        z.object({
+          eventId: z.number().int().positive(),
+          decision: z.enum(["approved", "rejected"]),
+          note: z.string().trim().max(1000).optional(),
+        }),
+      )
+      .mutation(async ({ ctx, input }) => {
+        if (ctx.user.role !== "admin") {
+          throw new Error("Only an authenticated administrator can decide an approval request");
+        }
+
+        return db.decideAuditEvent(input.eventId, String(ctx.user.id), input.decision, input.note);
+      }),
   }),
 });
 

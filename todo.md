@@ -214,3 +214,17 @@
 - [ ] Document and remediate exposed Shopify client-secret and automation-token evidence through provider-side rotation and revocation
 - [x] Validate the new resource and commerce-governance features with static analysis, tests, and accessibility review
 - [x] Document the confidential credential-remediation protocol and approval-gated provider activation path without retaining secret values
+- [x] Audit all implemented claims, connector states, automation code paths, and operational configuration against verifiable evidence
+- [x] Assess the supplied Blueprint and Thought2Ponder market research for implementation deltas and commercial-risk controls
+- [ ] Verify every enabled connector with a scoped read-only capability check and document blocked providers honestly
+- [x] Verify every in-scope Kingdom Executor connector with scoped read-only evidence and document remaining provider blockers
+- [x] Build an executive automation-control surface with risk level, authority, preconditions, audit status, and approval state
+- [ ] Reconcile Printify provider context and Shopify digital-product configuration evidence without storing tokens, PII, or payout data
+- [x] Prepare exact approval packets for credential rotation, Printify read-only adapter activation, Shopify digital-product repair, and external publication/deployment
+- [ ] Execute only user-approved external operations and record immutable reconciliation results
+- [x] Extract and reconcile the supplied Kingdom Executor master, purpose, visual-system, and Christ-consciousness strategy blueprints into the governed architecture
+- [x] Translate approved spiritual and purpose principles into clear product language while retaining Scripture, interpretation, AI-inference, and technical-fact distinctions
+- [x] Identify duplicate, conflicting, or superseded blueprint directives and preserve a single evidence-ranked implementation reference
+- [x] Audit and reconcile available platform, connector, and plugin capabilities into one least-privilege operational inventory
+- [ ] Optimize truthful status, empty states, and approval feedback across command, integrations, commerce, and learning surfaces
+- [ ] Remove or quarantine obsolete configuration paths that imply unverified automation, deployment, financial, or privileged capabilities

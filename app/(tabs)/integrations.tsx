@@ -1,6 +1,7 @@
 import { ActivityIndicator, ScrollView, Text, View } from "react-native";
 
 import { ScreenContainer } from "@/components/screen-container";
+import { ExecutiveAutomationBoard } from "@/components/operations/executive-automation-board";
 import { useColors } from "@/hooks/use-colors";
 import { trpc } from "@/lib/trpc";
 
@@ -79,6 +80,8 @@ export default function IntegrationsScreen() {
               );
             })}
           </View>
+
+          <ExecutiveAutomationBoard />
 
           <View className="bg-surface rounded-lg p-4 border border-border mt-4">
             <Text className="text-primary font-semibold text-center">Evidence states: PLANNED · SCAFFOLDED · INTEGRATED · VERIFIED · BLOCKED</Text>

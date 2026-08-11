@@ -160,3 +160,39 @@ export async function recordAuditEvent(event: InsertAuditEvent): Promise<void> {
 
   await db.insert(auditEvents).values(event);
 }
+
+export async function listAuditEventsForActor(actorId: string, limit = 25) {
+  const db = await getDb();
+  if (!db) return [];
+
+  return db
+    .select()
+    .from(auditEvents)
+    .where(eq(auditEvents.actorId, actorId))
+    .orderBy(desc(auditEvents.createdAt))
+    .limit(Math.min(Math.max(limit, 1), 100));
+}
+
+export async function decideAuditEvent(
+  eventId: number,
+  approverId: string,
+  decision: "approved" | "rejected",
+  note?: string,
+) {
+  const db = await getDb();
+  if (!db) {
+    throw new Error("Database is not available for approval decisions");
+  }
+
+  await db
+    .update(auditEvents)
+    .set({
+      status: decision,
+      approvedBy: approverId,
+      approvedAt: new Date(),
+      error: decision === "rejected" ? (note ?? "Rejected by approver") : null,
+    })
+    .where(eq(auditEvents.id, eventId));
+
+  return { updated: true } as const;
+}
