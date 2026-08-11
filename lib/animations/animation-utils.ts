@@ -50,7 +50,7 @@ export const fadeOutAnimation = (duration = 300) => {
 export const scaleAnimation = (fromValue = 1, toValue = 0.95, duration = 100) => {
   const scale = new Animated.Value(fromValue);
 
-  const animateTo = (value: number) => {
+  const animateTo = (value: number = toValue) => {
     Animated.timing(scale, {
       toValue: value,
       duration,

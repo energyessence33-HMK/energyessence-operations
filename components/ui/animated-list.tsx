@@ -1,6 +1,5 @@
-import { Animated, FlatList, View, FlatListProps } from "react-native";
+import { Animated, FlatList, FlatListProps } from "react-native";
 import { useRef, useEffect } from "react";
-import { useFadeIn } from "@/hooks/use-animation";
 
 interface AnimatedListProps<T> extends Omit<FlatListProps<T>, "renderItem"> {
   data: T[];

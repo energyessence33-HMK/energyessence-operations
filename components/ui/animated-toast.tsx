@@ -2,7 +2,6 @@ import { Animated, View, Text } from "react-native";
 import { useFadeIn } from "@/hooks/use-animation";
 import { useColors } from "@/hooks/use-colors";
 import { MaterialIcons } from "@expo/vector-icons";
-import { cn } from "@/lib/utils";
 
 interface AnimatedToastProps {
   message: string;

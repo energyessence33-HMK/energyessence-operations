@@ -16,7 +16,7 @@ export function MainLayoutWithNav({
 }: MainLayoutWithNavProps) {
   const colors = useColors();
   const { width } = useWindowDimensions();
-  const [isNavCollapsed, setIsNavCollapsed] = useState(false);
+  const [isNavCollapsed] = useState(false);
 
   // Determine if we should show navigation based on platform and screen size
   const isMobile = Platform.OS === "web" ? width < 768 : true;

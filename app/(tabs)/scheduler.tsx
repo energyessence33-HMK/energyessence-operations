@@ -15,7 +15,7 @@ interface ScheduledPost {
 
 export default function SchedulerScreen() {
   const colors = useColors();
-  const [posts, setPosts] = useState<ScheduledPost[]>([
+  const [posts] = useState<ScheduledPost[]>([
     {
       id: "1",
       title: "Morning Inspiration",

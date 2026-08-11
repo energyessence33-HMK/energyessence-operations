@@ -1,8 +1,7 @@
-import { ScrollView, Text, View, TouchableOpacity, TextInput } from "react-native";
+import { ScrollView, Text, View, TouchableOpacity } from "react-native";
 import { useState } from "react";
 
 import { ScreenContainer } from "@/components/screen-container";
-import { useColors } from "@/hooks/use-colors";
 
 interface IdentityStep {
   id: string;
@@ -12,9 +11,8 @@ interface IdentityStep {
 }
 
 export default function SpiritualIdentityScreen() {
-  const colors = useColors();
-  const [selectedStep, setSelectedStep] = useState<string | null>(null);
-  const [journeySteps, setJourneySteps] = useState<IdentityStep[]>([
+  const [, setSelectedStep] = useState<string | null>(null);
+  const journeySteps: IdentityStep[] = [
     {
       id: "1",
       title: "Find Your Essence",
@@ -39,20 +37,10 @@ export default function SpiritualIdentityScreen() {
       description: "Transform identity into brand positioning",
       completed: false,
     },
-  ]);
+  ];
 
-  const [affirmation, setAffirmation] = useState(
-    "I am aligned with my true essence and divine purpose"
-  );
-  const [alignmentScore, setAlignmentScore] = useState(78);
-
-  const toggleStep = (id: string) => {
-    setJourneySteps(
-      journeySteps.map((step) =>
-        step.id === id ? { ...step, completed: !step.completed } : step
-      )
-    );
-  };
+  const affirmation = "I am aligned with my true essence and divine purpose";
+  const alignmentScore = 78;
 
   const completedSteps = journeySteps.filter((s) => s.completed).length;
 

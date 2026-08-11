@@ -96,10 +96,7 @@ class PsychologyEngine {
     const emotionalScore = Math.min(100, triggerCount * 8);
 
     // Identify psychology principles
-    const principles = this.identifyPsychologyPrinciples(
-      uniqueTriggers,
-      content
-    );
+    const principles = this.identifyPsychologyPrinciples(uniqueTriggers);
 
     // Generate recommendations
     const recommendations = this.generateRecommendations(
@@ -184,8 +181,6 @@ class PsychologyEngine {
    */
   private scoreHeadline(headline: string): number {
     let score = 50;
-    const length = headline.length;
-
     // Optimal headline length is 6-12 words
     const wordCount = headline.split(" ").length;
     if (wordCount >= 6 && wordCount <= 12) score += 15;
@@ -318,8 +313,7 @@ class PsychologyEngine {
    * Identify psychology principles present in content
    */
   private identifyPsychologyPrinciples(
-    triggers: string[],
-    content: string
+    triggers: string[]
   ): string[] {
     const principles: string[] = [];
 

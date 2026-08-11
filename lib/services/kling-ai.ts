@@ -143,16 +143,17 @@ class KlingAIService {
     content: string,
     duration: "1_min" | "3_min"
   ): { script: string; voiceoverDuration: number } {
-    const words = content.split(" ").length;
-    const targetWords = duration === "1_min" ? 150 : 400; // Approximate words per minute
+    const words = content.trim().split(/\s+/).filter(Boolean);
+    const targetWords = duration === "1_min" ? 150 : 400;
+    const scriptContent = words.slice(0, targetWords).join(" ");
 
     // Professional script formatting
     const script = `
 [INTRO - 3 seconds]
-${content.substring(0, 100)}...
+${scriptContent.substring(0, 100)}...
 
 [MAIN CONTENT - ${duration === "1_min" ? "45" : "150"} seconds]
-${content}
+${scriptContent}
 
 [CALL TO ACTION - 5 seconds]
 Take action now. Learn more at Kingdom Executor.

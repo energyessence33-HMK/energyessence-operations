@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity, Image, Dimensions } from "react-native";
+import { View, Text, TouchableOpacity } from "react-native";
 import Animated from "react-native-reanimated";
 import { useColors } from "@/hooks/use-colors";
 import { MaterialIcons } from "@expo/vector-icons";
@@ -6,7 +6,6 @@ import { useEffect, useState } from "react";
 import {
   useCompanionBreathing,
   useCompanionGlow,
-  useCompanionBlink,
   useCompanionFloat,
   useCompanionPulse,
   useCompanionBounce,
@@ -35,7 +34,6 @@ export function EnhancedSpiritualCompanion({
 
   const breathing = useCompanionBreathing();
   const glow = useCompanionGlow();
-  const blink = useCompanionBlink();
   const float = useCompanionFloat();
   const pulse = useCompanionPulse();
   const bounce = useCompanionBounce();

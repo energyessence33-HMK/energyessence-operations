@@ -2,7 +2,6 @@ import { ScrollView, Text, View, TouchableOpacity } from "react-native";
 import { useState } from "react";
 
 import { ScreenContainer } from "@/components/screen-container";
-import { useColors } from "@/hooks/use-colors";
 
 interface BrandTool {
   id: string;

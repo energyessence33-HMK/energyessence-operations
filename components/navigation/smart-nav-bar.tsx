@@ -1,7 +1,6 @@
 import { View, Text, TouchableOpacity, ScrollView } from "react-native";
 import { useRouter, usePathname } from "expo-router";
 import { cn } from "@/lib/utils";
-import { useColors } from "@/hooks/use-colors";
 import { smartRouter, type NavigationRoute } from "@/lib/navigation/smart-router";
 import { useEffect, useState } from "react";
 
@@ -16,7 +15,6 @@ interface NavItem {
 export function SmartNavBar() {
   const router = useRouter();
   const pathname = usePathname();
-  const colors = useColors();
   const [navItems, setNavItems] = useState<NavItem[]>([]);
   const [recommendedAction, setRecommendedAction] = useState<any>(null);
 

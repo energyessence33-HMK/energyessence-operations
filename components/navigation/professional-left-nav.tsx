@@ -1,8 +1,8 @@
-import { View, Text, TouchableOpacity, ScrollView, Animated as RNAnimated } from "react-native";
+import { View, Text, TouchableOpacity, ScrollView } from "react-native";
 import { useColors } from "@/hooks/use-colors";
 import { MaterialIcons } from "@expo/vector-icons";
 import { useRouter } from "expo-router";
-import { useState, useRef } from "react";
+import { useState } from "react";
 
 export interface NavItem {
   id: string;
@@ -31,7 +31,6 @@ export function ProfessionalLeftNav({
   const colors = useColors();
   const router = useRouter();
   const [expandedItems, setExpandedItems] = useState<Set<string>>(new Set());
-  const animationValues = useRef<Record<string, RNAnimated.Value>>({});
 
   const toggleSubmenu = (itemId: string) => {
     const newExpanded = new Set(expandedItems);
@@ -149,7 +148,22 @@ export function ProfessionalLeftNav({
               >
                 Executor
               </Text>
-            </View>
+              </View>
+          )}
+          {onCollapse && (
+            <TouchableOpacity
+              onPress={onCollapse}
+              accessibilityRole="button"
+              accessibilityLabel={isCollapsed ? "Expand navigation" : "Collapse navigation"}
+              className="w-8 h-8 rounded-lg items-center justify-center"
+              style={{ backgroundColor: colors.surface }}
+            >
+              <MaterialIcons
+                name={isCollapsed ? "chevron-right" : "chevron-left"}
+                size={20}
+                color={colors.foreground}
+              />
+            </TouchableOpacity>
           )}
         </View>
       </View>

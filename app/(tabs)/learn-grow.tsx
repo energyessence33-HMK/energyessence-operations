@@ -2,7 +2,6 @@ import { ScrollView, Text, View, TouchableOpacity } from "react-native";
 import { useState } from "react";
 
 import { ScreenContainer } from "@/components/screen-container";
-import { useColors } from "@/hooks/use-colors";
 
 interface Course {
   id: string;
@@ -21,7 +20,6 @@ interface Resource {
 }
 
 export default function LearnGrowScreen() {
-  const colors = useColors();
   const [selectedCourse, setSelectedCourse] = useState<string | null>(null);
 
   const courses: Course[] = [

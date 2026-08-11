@@ -1,4 +1,4 @@
-import { Animated, TouchableOpacity, View, Text } from "react-native";
+import { Animated, TouchableOpacity, Text } from "react-native";
 import { useScalePress } from "@/hooks/use-animation";
 import { useColors } from "@/hooks/use-colors";
 import { cn } from "@/lib/utils";

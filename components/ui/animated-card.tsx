@@ -1,6 +1,5 @@
 import { Animated, View, ViewProps } from "react-native";
 import { useFadeIn, useSlideIn } from "@/hooks/use-animation";
-import { useColors } from "@/hooks/use-colors";
 import { cn } from "@/lib/utils";
 
 interface AnimatedCardProps extends ViewProps {
@@ -23,8 +22,7 @@ export function AnimatedCard({
   ...props
 }: AnimatedCardProps) {
   const { opacity } = useFadeIn(300, true);
-  const { position, getTransformStyle } = useSlideIn(slideDirection, 50, 400, true);
-  const colors = useColors();
+  const { getTransformStyle } = useSlideIn(slideDirection, 50, 400, true);
 
   const variantStyles = {
     elevated: "bg-surface border border-border shadow-sm",

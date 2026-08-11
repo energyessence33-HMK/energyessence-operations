@@ -39,14 +39,35 @@ export class WebSocketService {
   connect(): Promise<void> {
     return new Promise((resolve, reject) => {
       try {
-        // Note: WebSocket is not available in React Native by default
-        // This would need to be implemented with a library like react-native-websocket
-        // For now, we'll use a polling fallback
+        // React Native and web expose WebSocket globally; if unavailable, retain
+        // the analytics polling fallback while keeping the service usable.
+        if (typeof WebSocket === 'undefined') {
+          this.isConnected = true;
+          this.reconnectAttempts = 0;
+          this.emit('connection_status', { connected: true, transport: 'polling' });
+          resolve();
+          return;
+        }
 
-        this.isConnected = true;
-        this.reconnectAttempts = 0;
-        this.emit('connection_status', { connected: true });
-        resolve();
+        const socket = new WebSocket(this.url);
+        this.ws = socket;
+        socket.onopen = () => {
+          this.isConnected = true;
+          this.reconnectAttempts = 0;
+          this.emit('connection_status', { connected: true, transport: 'websocket' });
+          resolve();
+        };
+        socket.onmessage = (event) => this.handleMessage(event);
+        socket.onerror = (event) => {
+          console.error('WebSocket connection error:', event);
+          reject(new Error('WebSocket connection failed'));
+        };
+        socket.onclose = () => {
+          this.ws = null;
+          this.isConnected = false;
+          this.emit('connection_status', { connected: false });
+          this.handleReconnect();
+        };
       } catch (error) {
         console.error('WebSocket connection error:', error);
         this.handleReconnect();

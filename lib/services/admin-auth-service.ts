@@ -266,7 +266,7 @@ export class AdminAuthService {
       // TODO: Integrate with backend activity logging
       // This is a placeholder implementation
 
-      return [
+      const activity = [
         {
           id: 1,
           admin: 'Admin User',
@@ -286,6 +286,8 @@ export class AdminAuthService {
           timestamp: new Date(Date.now() - 30 * 60 * 1000),
         },
       ];
+
+      return activity.slice(0, Math.max(0, limit));
     } catch (error) {
       console.error('Error getting activity log:', error);
       return [];

@@ -2,7 +2,6 @@ import { ScrollView, Text, View, TouchableOpacity } from "react-native";
 import { useState } from "react";
 
 import { ScreenContainer } from "@/components/screen-container";
-import { useColors } from "@/hooks/use-colors";
 
 interface MonetizationModel {
   id: string;
@@ -20,7 +19,6 @@ interface Module {
 }
 
 export default function MonetizeScreen() {
-  const colors = useColors();
   const [selectedModel, setSelectedModel] = useState<string | null>(null);
 
   const monetizationModels: MonetizationModel[] = [

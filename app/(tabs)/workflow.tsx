@@ -15,7 +15,7 @@ interface WorkflowTask {
 
 export default function WorkflowScreen() {
   const colors = useColors();
-  const [tasks, setTasks] = useState<WorkflowTask[]>([
+  const [tasks] = useState<WorkflowTask[]>([
     {
       id: "1",
       name: "Create brand guidelines",

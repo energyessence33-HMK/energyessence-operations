@@ -1,6 +1,6 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import * as Notifications from "expo-notifications";
-import { getAffirmationOfTheDay, AFFIRMATIONS } from "@/lib/data/affirmations";
+import { getAffirmationOfTheDay } from "@/lib/data/affirmations";
 
 export interface AffirmationSchedule {
   id: string;

@@ -20,7 +20,6 @@ interface MetricCard {
 export default function AnalyticsDashboard() {
   const colors = useColors();
   const [metrics, setMetrics] = useState<AnalyticsDashboardMetrics | null>(null);
-  // const [loading, setLoading] = useState(true); // Loading state for metrics
 
   useEffect(() => {
     loadMetrics();
@@ -35,8 +34,6 @@ export default function AnalyticsDashboard() {
       setMetrics(data);
     } catch (error) {
       console.error('Error loading analytics metrics:', error);
-    } finally {
-      setLoading(false);
     }
   };
 
