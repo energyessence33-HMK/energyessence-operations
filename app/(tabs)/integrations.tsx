@@ -1,8 +1,10 @@
-import { ActivityIndicator, ScrollView, Text, View } from "react-native";
+import { ActivityIndicator, ScrollView, Text, TouchableOpacity, View } from "react-native";
+import { useRouter } from "expo-router";
 
 import { ScreenContainer } from "@/components/screen-container";
 import { CredentialContainmentBoard } from "@/components/operations/credential-containment-board";
 import { ExecutiveAutomationBoard } from "@/components/operations/executive-automation-board";
+import { Thought2PonderSocialDestinations } from "@/components/social/thought2ponder-social-destinations";
 import { useColors } from "@/hooks/use-colors";
 import { trpc } from "@/lib/trpc";
 
@@ -15,7 +17,14 @@ function evidenceTone(status: string): "success" | "primary" | "warning" | "mute
 
 export default function IntegrationsScreen() {
   const colors = useColors();
+  const router = useRouter();
   const registryQuery = trpc.integrations.registry.useQuery();
+  const operations = [
+    { label: "Ecosystems", route: "/(tabs)/ecosystems" },
+    { label: "Workflows", route: "/(tabs)/workflow" },
+    { label: "Scheduler", route: "/(tabs)/scheduler" },
+    { label: "Analytics", route: "/(tabs)/admin-dashboard" },
+  ] as const;
 
   return (
     <ScreenContainer className="p-4">
@@ -31,6 +40,25 @@ export default function IntegrationsScreen() {
             <Text className="text-sm text-muted mt-1">
               Connector writes, webhook calls, messages, publications, permission changes, and payments are not initiated from this screen. They require a recorded, human-approved execution request.
             </Text>
+          </View>
+
+          <View className="gap-2">
+            <Text className="text-lg font-bold text-foreground">Operations</Text>
+            <Text className="text-sm text-muted">Open a focused operational area without adding permanent navigation clutter.</Text>
+            <View className="bg-surface rounded-lg border border-border overflow-hidden">
+              {operations.map((operation, index) => (
+                <TouchableOpacity
+                  key={operation.route}
+                  onPress={() => router.push(operation.route as any)}
+                  accessibilityRole="button"
+                  accessibilityLabel={`Open ${operation.label}`}
+                  className={`flex-row items-center justify-between px-4 py-3 ${index < operations.length - 1 ? "border-b border-border" : ""}`}
+                >
+                  <Text className="text-sm font-semibold text-foreground">{operation.label}</Text>
+                  <Text className="text-base text-primary">›</Text>
+                </TouchableOpacity>
+              ))}
+            </View>
           </View>
 
           <View className="gap-3">
@@ -85,6 +113,8 @@ export default function IntegrationsScreen() {
           <ExecutiveAutomationBoard />
 
           <CredentialContainmentBoard />
+
+          <Thought2PonderSocialDestinations />
 
           <View className="bg-surface rounded-lg p-4 border border-border mt-4">
             <Text className="text-primary font-semibold text-center">Evidence states: PLANNED · SCAFFOLDED · INTEGRATED · VERIFIED · BLOCKED</Text>

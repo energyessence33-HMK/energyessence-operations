@@ -95,6 +95,26 @@ export const GOVERNED_INTEGRATIONS = [
     lastVerifiedAt: "2026-08-11",
     verificationDetail: "Provider context was supplied as confidential operational evidence only. No Printify credential, shop, catalog, order, fulfilment, or payout data was accessed.",
   },
+  {
+    id: "instagram-thought2ponder",
+    displayName: "Instagram · Thought2Ponder",
+    category: "social",
+    connectionMode: "oauth",
+    evidenceStatus: "BLOCKED",
+    description: "Thought2Ponder social destination. Account linkage, insights, inbox access, and publishing are independently approval-gated.",
+    lastVerifiedAt: "2026-08-11",
+    verificationDetail: "The configured Instagram connector is enabled but not connected. A read-only account identity check was attempted and no account, post, insight, audience, or message data was retrieved.",
+  },
+  {
+    id: "tiktok-thought2ponder",
+    displayName: "TikTok · Thought2Ponder",
+    category: "social",
+    connectionMode: "oauth",
+    evidenceStatus: "BLOCKED",
+    lastVerifiedAt: "2026-08-11",
+    description: "Thought2Ponder social destination. Content publishing and analytics require a linked provider account and an explicit approval request.",
+    verificationDetail: "TikTok for Business is present in the account inventory but disabled. No TikTok account, audience, content, advertising, or performance data was accessed.",
+  },
 ] as const satisfies readonly IntegrationMetadata[];
 
 export class IntegrationRegistry {

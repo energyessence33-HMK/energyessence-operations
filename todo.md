@@ -232,3 +232,16 @@
 - [x] Add an auditable local preflight for credential rotation that remains non-executing until an administrator approves EA-001
 - [x] Validate the credential-remediation experience for secret leakage, role enforcement, and clear post-rotation verification guidance
 - [ ] Obtain explicit approval before any provider-side credential rotation, revocation, or connection update
+- [x] Record explicit owner approval for EA-001 credential rotation and revocation, EA-002 least-privilege Printify adapter, and post-rotation Shopify health verification
+- [ ] Inventory provider credential consumers and stage a secure replacement cutover without exposing replacement values
+- [ ] Implement and validate a server-only least-privilege Printify health adapter with no client credential path
+- [ ] Run post-rotation read-only Shopify and Printify health checks and update evidence statuses
+- [ ] Revoke superseded Shopify and Printify provider credentials only after replacement health checks pass
+- [x] Audit and simplify the left navigation into a concise task-first hierarchy with progressive disclosure
+- [x] Consolidate secondary modules into compact contextual menus while preserving direct access to core workflows, ecosystems, and governance
+- [x] Add clear active-state, context, and mobile navigation cues without increasing visual clutter
+- [x] Validate simplified navigation routes, accessibility semantics, responsive behavior, and performance before resuming approved provider credential work
+- [ ] Verify read-only identity access for TikTok @thought2ponder and Instagram @thought2ponder06 without retrieving unnecessary audience or message data
+- [x] Add Thought2Ponder social destinations to the governed integration registry with platform, handle, evidence state, permissions, and last-verification metadata
+- [x] Implement a non-executing social content publication preflight with L3 approval, audit evidence, and no automated posting
+- [x] Prepare separate approval packets for social publishing, insights, inbox access, and any account-permission changes

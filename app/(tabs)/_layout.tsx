@@ -100,64 +100,64 @@ export default function TabLayout() {
           <Tabs.Screen
             name="brand-studio"
             options={{
-              title: "Brand",
+              title: "Create",
               tabBarIcon: ({ color }) => <IconSymbol size={28} name="square.grid.2x2" color={color} />,
             }}
           />
           <Tabs.Screen
             name="video-generator"
             options={{
-              title: "Video",
-              tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
+              href: null,
             }}
           />
           <Tabs.Screen
             name="learn-grow"
             options={{
-              title: "Learn",
-              tabBarIcon: ({ color }) => <IconSymbol size={28} name="checkmark.circle" color={color} />,
+              href: null,
             }}
           />
           <Tabs.Screen
             name="monetize"
             options={{
-              title: "Monetize",
+              title: "Commerce",
               tabBarIcon: ({ color }) => <IconSymbol size={28} name="calendar" color={color} />,
             }}
           />
           <Tabs.Screen
             name="psychology-module"
             options={{
-              title: "Psychology",
-              tabBarIcon: ({ color }) => <IconSymbol size={28} name="brain" color={color} />,
+              href: null,
             }}
           />
           <Tabs.Screen
             name="community"
             options={{
-              title: "Community",
-              tabBarIcon: ({ color }) => <IconSymbol size={28} name="person.3.fill" color={color} />,
+              href: null,
             }}
           />
           <Tabs.Screen
             name="subscription"
             options={{
-              title: "Premium",
-              tabBarIcon: ({ color }) => <IconSymbol size={28} name="star.fill" color={color} />,
+              href: null,
             }}
           />
           <Tabs.Screen
             name="admin-dashboard"
             options={{
-              title: "Admin",
-              tabBarIcon: ({ color }) => <IconSymbol size={28} name="gearshape.fill" color={color} />,
+              href: null,
             }}
           />
           <Tabs.Screen
             name="settings"
             options={{
-              title: "Settings",
-              tabBarIcon: ({ color }) => <IconSymbol size={28} name="gear" color={color} />,
+              href: null,
+            }}
+          />
+          <Tabs.Screen
+            name="integrations"
+            options={{
+              title: "Operate",
+              tabBarIcon: ({ color }) => <IconSymbol size={28} name="chevron.left.forwardslash.chevron.right" color={color} />,
             }}
           />
         </Tabs>

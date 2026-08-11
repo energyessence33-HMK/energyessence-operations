@@ -20,7 +20,7 @@ export type IntegrationConnectionStatus =
 export interface IntegrationMetadata {
   id: string;
   displayName: string;
-  category: "code" | "operations" | "knowledge" | "commerce" | "creative" | "automation" | "payments";
+  category: "code" | "operations" | "knowledge" | "commerce" | "creative" | "automation" | "payments" | "social";
   connectionMode: "mcp" | "oauth" | "api_key" | "webhook" | "native";
   evidenceStatus: IntegrationEvidenceStatus;
   description: string;

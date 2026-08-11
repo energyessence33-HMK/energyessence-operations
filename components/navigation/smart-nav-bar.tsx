@@ -25,13 +25,10 @@ export function SmartNavBar() {
 
     // Build navigation items based on user access
     const potentialItems: NavItem[] = [
-      { name: "Home", route: "dashboard", icon: "house.fill" },
-      { name: "Spiritual", route: "spiritual-identity", icon: "sparkles" },
-      { name: "Brand", route: "brand-studio", icon: "square.grid.2x2" },
-      { name: "Video", route: "video-generator", icon: "paperplane.fill" },
-      { name: "Psychology", route: "psychology-module", icon: "brain.head.profile" },
-      { name: "Learn", route: "learn-grow", icon: "checkmark.circle" },
-      { name: "Monetize", route: "monetize", icon: "calendar" },
+      { name: "Command", route: "dashboard", icon: "house.fill" },
+      { name: "Create", route: "brand-studio", icon: "square.grid.2x2" },
+      { name: "Grow", route: "spiritual-identity", icon: "sparkles" },
+      { name: "Commerce", route: "monetize", icon: "calendar" },
     ];
 
     // Filter items based on access
