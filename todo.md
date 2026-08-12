@@ -256,3 +256,7 @@
 - [x] Validate Android release readiness and create a release checkpoint for the user-controlled Publish flow
 - [ ] Request final confirmation for the exact Instagram test post after its media asset is attached
 - [x] Provide the user-controlled Google Play publishing handoff without attempting store submission
+
+- [x] Verify Thought2Ponder execution OS platform endpoint (`thoughtos-dripo8be.manus.space`)
+- [x] Document Expo EAS project initialization (`eas init --id e841d939-383f-49d1-98c2-5b88cc9c203d`)
+- [x] Provide owner-controlled EAS login and build handoff instructions without exposing credentials or auto-publishing
