@@ -6,12 +6,14 @@ import {
 } from "../lib/social/thought2ponder-social-destinations";
 
 describe("Thought2Ponder social destinations", () => {
-  it("registers the supplied destinations as blocked until provider linkage is verified", () => {
+  it("records browser-verified ownership separately from blocked provider linkage", () => {
     expect(THOUGHT2PONDER_SOCIAL_DESTINATIONS.map((destination) => destination.handle)).toEqual([
       "@thought2ponder06",
       "@thought2ponder",
     ]);
-    expect(THOUGHT2PONDER_SOCIAL_DESTINATIONS.every((destination) => destination.evidenceStatus === "BLOCKED")).toBe(true);
+    expect(THOUGHT2PONDER_SOCIAL_DESTINATIONS[0].evidenceStatus).toBe("TESTED");
+    expect(THOUGHT2PONDER_SOCIAL_DESTINATIONS[1].evidenceStatus).toBe("BLOCKED");
+    expect(THOUGHT2PONDER_SOCIAL_DESTINATIONS[0].blockingReason).toContain("MCP connector remains unlinked");
   });
 
   it("classifies publication as L3 and never executes it during preflight", () => {

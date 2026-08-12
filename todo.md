@@ -245,3 +245,14 @@
 - [x] Add Thought2Ponder social destinations to the governed integration registry with platform, handle, evidence state, permissions, and last-verification metadata
 - [x] Implement a non-executing social content publication preflight with L3 approval, audit evidence, and no automated posting
 - [x] Prepare separate approval packets for social publishing, insights, inbox access, and any account-permission changes
+- [x] Record explicit owner approval for TS-001 Instagram linkage, TS-002 TikTok provider enablement, and one TS-003 unpublished test-post draft
+- [ ] Complete the least-privilege Instagram OAuth linkage and verify the connected account handle only
+- [ ] Enable a suitable TikTok provider and verify the connected account handle only
+- [x] Draft one accessible Thought2Ponder test post, store its local preflight evidence, and request final publication confirmation
+- [x] Keep TikTok provider linkage deferred without creating campaigns, billing, assets, or account permissions
+- [x] Prepare an Instagram-only accessible test-post draft for @thought2ponder06 with a local L3 preflight and no publication
+- [x] Create and integrate the approved midnight-blue and gold Thought2Ponder social graphic without publishing it
+- [x] Run scoped read-only audits for GitHub, Notion, Airtable, and relevant enabled connector capabilities
+- [x] Validate Android release readiness and create a release checkpoint for the user-controlled Publish flow
+- [ ] Request final confirmation for the exact Instagram test post after its media asset is attached
+- [x] Provide the user-controlled Google Play publishing handoff without attempting store submission

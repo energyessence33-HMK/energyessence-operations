@@ -100,10 +100,10 @@ export const GOVERNED_INTEGRATIONS = [
     displayName: "Instagram · Thought2Ponder",
     category: "social",
     connectionMode: "oauth",
-    evidenceStatus: "BLOCKED",
+    evidenceStatus: "TESTED",
     description: "Thought2Ponder social destination. Account linkage, insights, inbox access, and publishing are independently approval-gated.",
     lastVerifiedAt: "2026-08-11",
-    verificationDetail: "The configured Instagram connector is enabled but not connected. A read-only account identity check was attempted and no account, post, insight, audience, or message data was retrieved.",
+    verificationDetail: "An authenticated owner browser session reached the intended profile and exposed owner-only profile controls, verifying the destination identity. The configured Instagram MCP connector remains unlinked; no API account, post, insight, audience, or message data was retrieved.",
   },
   {
     id: "tiktok-thought2ponder",

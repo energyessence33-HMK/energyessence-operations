@@ -7,7 +7,7 @@ export interface SocialDestination {
   platform: SocialPlatform;
   handle: string;
   profileUrl: string;
-  evidenceStatus: "BLOCKED";
+  evidenceStatus: "TESTED" | "BLOCKED";
   safeScope: readonly string[];
   blockingReason: string;
 }
@@ -18,9 +18,9 @@ export const THOUGHT2PONDER_SOCIAL_DESTINATIONS: readonly SocialDestination[] = 
     platform: "instagram",
     handle: "@thought2ponder06",
     profileUrl: "https://www.instagram.com/thought2ponder06/",
-    evidenceStatus: "BLOCKED",
-    safeScope: ["Read-only profile identity after connection", "L3 post or reel publication after approval"],
-    blockingReason: "The configured Instagram connector is not connected; no profile or audience data has been retrieved.",
+    evidenceStatus: "TESTED",
+    safeScope: ["Browser-based owner identity verification completed", "L3 post or reel publication after final approval"],
+    blockingReason: "The owner browser session verified the intended profile. The configured Instagram MCP connector remains unlinked, so programmatic posting and insights access are unavailable.",
   },
   {
     id: "thought2ponder-tiktok",
